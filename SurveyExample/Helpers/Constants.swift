@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct NimbleAPI {
     private static let base = "https://nimble-survey-api.herokuapp.com"
@@ -39,8 +40,14 @@ struct Keychain {
     static let token = "token"
 }
 
+struct AppColors {
+    static let navBarColor = UIColor.init(hexString: "101C37")
+    static let navBarTitleColor = UIColor.white
+}
+
 enum GenralError: Error {
     case badOptional
     case authFailed
     case invalidGrant
+    case apiFailed
 }

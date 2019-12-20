@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         rootNavigationController = UINavigationController(rootViewController: viewController)
+        setupNavigationAppereance()
         
         window?.rootViewController = rootNavigationController
         
@@ -56,7 +57,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    private func setupNavigationAppereance(){
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: AppColors.navBarTitleColor]
+            navBarAppearance.backgroundColor = AppColors.navBarColor
+            UINavigationBar.appearance(whenContainedInInstancesOf: [UINavigationController.self]).standardAppearance = navBarAppearance
+            UINavigationBar.appearance().tintColor = .white
+        }else {
+            UINavigationBar.appearance().barTintColor = AppColors.navBarColor
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:AppColors.navBarTitleColor]
+            UINavigationBar.appearance().tintColor = .white
+            UINavigationBar.appearance().isTranslucent = false
+        }
+    }
 }
 

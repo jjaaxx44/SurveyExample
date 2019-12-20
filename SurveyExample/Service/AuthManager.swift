@@ -21,16 +21,20 @@ class AuthManager {
     static let shared = AuthManager()
     
     fileprivate let keychain = KeychainSwift()
-    
+    fileprivate let lock = NSLock()
+
     fileprivate init() { }
     
     //method to retrive token either from local valid data or using Auth
     func fetchToken(complition: @escaping (Swift.Result<String, GenralError>) -> Void) {
+        lock.lock()
         if isTokenValid() {
             guard let token = keychain.get(Keychain.token) else {
                 complition(.failure(.badOptional))
+                lock.unlock()
                 return
             }
+            lock.unlock()
             complition(.success(token))
         }else{
             let parameters = [AuthParameters.grant_type: HardCoded.grant_type,
@@ -50,14 +54,17 @@ class AuthManager {
                                     }else{
                                         complition(.failure(.authFailed))
                                     }
+                                    self.lock.unlock()
                                 }
                                 return
                         }
                         let _ = self.storeTokenInfo(authObject: authObject)
                         complition(.success(accessToken))
+                        self.lock.unlock()
                     }
                 case .failure(let error):
                     complition(.failure(.authFailed))
+                    self.lock.unlock()
                     print(error)
                 }
             }
