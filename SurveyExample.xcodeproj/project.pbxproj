@@ -3,27 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002E33C723AB6A7600A45FC3 /* SurveyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E33C623AB6A7600A45FC3 /* SurveyModel.swift */; };
+		00F510E123ABAEB600389BD8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F510E023ABAEB600389BD8 /* AuthManager.swift */; };
+		00F510E323ABB07300389BD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F510E223ABB07300389BD8 /* Constants.swift */; };
+		00F510E523ABC7F800389BD8 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F510E423ABC7F800389BD8 /* AuthModel.swift */; };
 		4A1484961F951ACF66F76381 /* Pods_SurveyExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A500D0603AE766370348DEB /* Pods_SurveyExample.framework */; };
 		55CBC1752130F9F2007BA829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CBC1742130F9F2007BA829 /* AppDelegate.swift */; };
-		55CBC1772130F9F2007BA829 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CBC1762130F9F2007BA829 /* ViewController.swift */; };
+		55CBC1772130F9F2007BA829 /* SurveyLandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CBC1762130F9F2007BA829 /* SurveyLandingPageVC.swift */; };
 		55CBC17C2130F9F4007BA829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CBC17B2130F9F4007BA829 /* Assets.xcassets */; };
 		55CBC17F2130F9F4007BA829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CBC17D2130F9F4007BA829 /* LaunchScreen.storyboard */; };
-		55CBC1872130FA2A007BA829 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55CBC1862130FA2A007BA829 /* ViewController.xib */; };
+		55CBC1872130FA2A007BA829 /* SurveyLandingPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55CBC1862130FA2A007BA829 /* SurveyLandingPageVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002E33C623AB6A7600A45FC3 /* SurveyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModel.swift; sourceTree = "<group>"; };
+		00F510E023ABAEB600389BD8 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		00F510E223ABB07300389BD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		00F510E423ABC7F800389BD8 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		2A500D0603AE766370348DEB /* Pods_SurveyExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurveyExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CBC1712130F9F2007BA829 /* SurveyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CBC1742130F9F2007BA829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		55CBC1762130F9F2007BA829 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55CBC1762130F9F2007BA829 /* SurveyLandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyLandingPageVC.swift; sourceTree = "<group>"; };
 		55CBC17B2130F9F4007BA829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55CBC17E2130F9F4007BA829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55CBC1802130F9F4007BA829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55CBC1862130FA2A007BA829 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		55CBC1862130FA2A007BA829 /* SurveyLandingPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyLandingPageVC.xib; sourceTree = "<group>"; };
 		97AE4D88BB680A2D4A5B6C89 /* Pods-SurveyExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyExample.debug.xcconfig"; path = "Target Support Files/Pods-SurveyExample/Pods-SurveyExample.debug.xcconfig"; sourceTree = "<group>"; };
 		FFCCEEDE7A6417AF93BFCC12 /* Pods-SurveyExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyExample.release.xcconfig"; path = "Target Support Files/Pods-SurveyExample/Pods-SurveyExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,6 +48,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002E33BF23AB68EE00A45FC3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				002E33C623AB6A7600A45FC3 /* SurveyModel.swift */,
+				00F510E423ABC7F800389BD8 /* AuthModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		002E33C023AB690B00A45FC3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				00F510E023ABAEB600389BD8 /* AuthManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		002E33C123AB691C00A45FC3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				00F510E223ABB07300389BD8 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		002E33C223AB692700A45FC3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				55CBC1762130F9F2007BA829 /* SurveyLandingPageVC.swift */,
+				55CBC1862130FA2A007BA829 /* SurveyLandingPageVC.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		002E33C323AB693D00A45FC3 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				55CBC17B2130F9F4007BA829 /* Assets.xcassets */,
+				55CBC17D2130F9F4007BA829 /* LaunchScreen.storyboard */,
+				55CBC1802130F9F4007BA829 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		55CBC1682130F9F2007BA829 = {
 			isa = PBXGroup;
 			children = (
@@ -62,11 +114,11 @@
 			isa = PBXGroup;
 			children = (
 				55CBC1742130F9F2007BA829 /* AppDelegate.swift */,
-				55CBC1762130F9F2007BA829 /* ViewController.swift */,
-				55CBC1862130FA2A007BA829 /* ViewController.xib */,
-				55CBC17B2130F9F4007BA829 /* Assets.xcassets */,
-				55CBC17D2130F9F4007BA829 /* LaunchScreen.storyboard */,
-				55CBC1802130F9F4007BA829 /* Info.plist */,
+				002E33C123AB691C00A45FC3 /* Helpers */,
+				002E33C023AB690B00A45FC3 /* Service */,
+				002E33BF23AB68EE00A45FC3 /* Models */,
+				002E33C223AB692700A45FC3 /* ViewControllers */,
+				002E33C323AB693D00A45FC3 /* Support */,
 			);
 			path = SurveyExample;
 			sourceTree = "<group>";
@@ -85,7 +137,6 @@
 				97AE4D88BB680A2D4A5B6C89 /* Pods-SurveyExample.debug.xcconfig */,
 				FFCCEEDE7A6417AF93BFCC12 /* Pods-SurveyExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -123,6 +174,7 @@
 				TargetAttributes = {
 					55CBC1702130F9F2007BA829 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -150,7 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CBC17F2130F9F4007BA829 /* LaunchScreen.storyboard in Resources */,
-				55CBC1872130FA2A007BA829 /* ViewController.xib in Resources */,
+				55CBC1872130FA2A007BA829 /* SurveyLandingPageVC.xib in Resources */,
 				55CBC17C2130F9F4007BA829 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,8 +256,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55CBC1772130F9F2007BA829 /* ViewController.swift in Sources */,
+				00F510E323ABB07300389BD8 /* Constants.swift in Sources */,
+				55CBC1772130F9F2007BA829 /* SurveyLandingPageVC.swift in Sources */,
+				00F510E123ABAEB600389BD8 /* AuthManager.swift in Sources */,
+				002E33C723AB6A7600A45FC3 /* SurveyModel.swift in Sources */,
 				55CBC1752130F9F2007BA829 /* AppDelegate.swift in Sources */,
+				00F510E523ABC7F800389BD8 /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,15 +400,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7P9QF7W2PX;
-				INFOPLIST_FILE = SurveyExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				INFOPLIST_FILE = SurveyExample/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nimble.surveyexample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -364,15 +420,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7P9QF7W2PX;
-				INFOPLIST_FILE = SurveyExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				INFOPLIST_FILE = SurveyExample/Support/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nimble.surveyexample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

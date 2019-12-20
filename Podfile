@@ -6,6 +6,6 @@ target 'SurveyExample' do
   use_frameworks!
 
   # Pods for SurveyExample
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'KeychainSwift', '~> 18.0'
 end

@@ -12,17 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var viewController:ViewController?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    var viewController: SurveyLandingPageVC?
+    var rootNavigationController: UINavigationController?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = UIColor.black
+        window?.backgroundColor = UIColor.white
 
-        viewController = ViewController(nibName: "ViewController", bundle: nil)
+        viewController = SurveyLandingPageVC(nibName: "SurveyLandingPageVC", bundle: nil)
         
-        window?.rootViewController = viewController
+        guard let viewController = viewController else {
+            return false
+        }
+        rootNavigationController = UINavigationController(rootViewController: viewController)
+        
+        window?.rootViewController = rootNavigationController
         
         window?.makeKeyAndVisible()
 
