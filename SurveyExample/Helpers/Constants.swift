@@ -43,6 +43,7 @@ struct Keychain {
 struct AppColors {
     static let navBarColor = UIColor.init(hexString: "101C37")
     static let navBarTitleColor = UIColor.white
+    static let buttonColor = UIColor.init(hexString: "CB1A27")
 }
 
 enum GenralError: Error {
@@ -50,4 +51,5 @@ enum GenralError: Error {
     case authFailed
     case invalidGrant
     case apiFailed
+    case requestCancelled
 }

@@ -8,15 +8,24 @@
 
 import UIKit
 
+extension UIView {
+    func addBorder(borderWidth: CGFloat, cornerRadius: CGFloat, borderColor: UIColor){
+        self.layer.borderColor = borderColor.cgColor
+        self.layer.borderWidth = borderWidth
+        self.layer.cornerRadius = cornerRadius
+    }
+}
+
 extension UIBarButtonItem {
     convenience init(compactImage: UIImage?, target: Any, action: Selector, forEvenr: UIPageControl.Event) {
-        let testButton : UIButton = UIButton.init(type: .custom)
+        let testButton: UIButton = UIButton.init(type: .custom)
         testButton.setImage(compactImage, for: .normal)
         testButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         testButton.addTarget(target, action: action, for: forEvenr)
         self.init(customView: testButton)
     }
 }
+
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")

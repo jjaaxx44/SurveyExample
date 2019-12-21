@@ -8,4 +8,6 @@ target 'SurveyExample' do
   # Pods for SurveyExample
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'KeychainSwift', '~> 18.0'
+  pod 'Toast-Swift', '~> 5.0.1'
+  pod 'Kingfisher', '~> 5.0'
 end

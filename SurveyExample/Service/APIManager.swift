@@ -16,6 +16,7 @@ class APIManager {
     fileprivate init() { }
     
     func fetchSurverys(pageNumber: Int, numebrOfSurverys: Int, complition: @escaping (Swift.Result<[Survey], GenralError>) -> Void) {
+        self.cancelPreviousSurveryRequest()
         AuthManager.shared.fetchToken { (result) in
             switch result{
             case .success(let token):
@@ -35,12 +36,27 @@ class APIManager {
                             complition(.success(serveyAraay))
                         }
                     case .failure(let error):
-                        complition(.failure(.apiFailed))
-                        print(error)
+                        if let errorString = error.errorDescription, errorString.contains("cancelled") {
+                            complition(.failure(.requestCancelled))
+                        }else{
+                            complition(.failure(.apiFailed))
+                        }
                     }
                 }
             case .failure(let err):
                 complition(.failure(err))
+            }
+        }
+    }
+    
+    private func cancelPreviousSurveryRequest(){
+        Alamofire.Session.default.session.getAllTasks { (dataTasks) in
+            dataTasks.forEach {
+                if let urlString = $0.originalRequest?.url?.absoluteString{
+                    if (urlString.contains(NimbleAPI.surveyUrl)) {
+                        $0.cancel()
+                    }
+                }
             }
         }
     }
