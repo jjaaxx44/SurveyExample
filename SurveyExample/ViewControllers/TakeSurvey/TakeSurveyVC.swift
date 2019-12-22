@@ -30,11 +30,11 @@ class TakeSurveyVC: UIViewController {
     }
     
     // MARK: - View and content setup
-    func setupView(){
+    private func setupView(){
         self.view.backgroundColor = AppColors.navBarColor
     }
     
-    func updateContents(){
+    private func updateContents(){
         takeSurveyDummyLlabel.text = "id: \(survey.id ?? "")\n\(survey.title ?? "")"
     }
 }

@@ -38,7 +38,7 @@ class SurveyPageVC: UIViewController {
     }
 
     // MARK: - View and content setup
-    func updateContents(){
+    private func updateContents(){
         guard let urlString = survey.cover_image_url,
             let url = URL(string: "\(urlString)l") else {
             return
