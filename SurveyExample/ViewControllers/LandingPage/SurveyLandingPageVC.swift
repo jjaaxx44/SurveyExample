@@ -91,6 +91,7 @@ class SurveyLandingPageVC: UIViewController {
     
     private func processApiSuccess(surveys: [Survey], forPage: Int){
         if surveys.count == 0 {
+            self.view.makeToast("No more surveys!!")
             return
         }
         currentSurveyPage = forPage

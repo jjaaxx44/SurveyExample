@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		002E33C723AB6A7600A45FC3 /* SurveyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E33C623AB6A7600A45FC3 /* SurveyModel.swift */; };
+		006BAE6D23AE2E1A00E192FB /* TakeSurveyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006BAE6B23AE2E1A00E192FB /* TakeSurveyVC.swift */; };
+		006BAE6E23AE2E1A00E192FB /* TakeSurveyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006BAE6C23AE2E1A00E192FB /* TakeSurveyVC.xib */; };
 		007519FA23AC7C55001BE856 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007519F923AC7C55001BE856 /* APIManager.swift */; };
 		007519FC23ACA532001BE856 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007519FB23ACA532001BE856 /* Extensions.swift */; };
 		007519FF23ACDBB4001BE856 /* SurveyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007519FD23ACDBB4001BE856 /* SurveyPageVC.swift */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		002E33C623AB6A7600A45FC3 /* SurveyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModel.swift; sourceTree = "<group>"; };
+		006BAE6B23AE2E1A00E192FB /* TakeSurveyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeSurveyVC.swift; sourceTree = "<group>"; };
+		006BAE6C23AE2E1A00E192FB /* TakeSurveyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TakeSurveyVC.xib; sourceTree = "<group>"; };
 		007519F923AC7C55001BE856 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		007519FB23ACA532001BE856 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		007519FD23ACDBB4001BE856 /* SurveyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyPageVC.swift; sourceTree = "<group>"; };
@@ -89,10 +93,8 @@
 		002E33C223AB692700A45FC3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				55CBC1762130F9F2007BA829 /* SurveyLandingPageVC.swift */,
-				55CBC1862130FA2A007BA829 /* SurveyLandingPageVC.xib */,
-				007519FD23ACDBB4001BE856 /* SurveyPageVC.swift */,
-				007519FE23ACDBB4001BE856 /* SurveyPageVC.xib */,
+				00712E0E23AE2C5300C1656E /* LandingPage */,
+				00712E0F23AE2C6700C1656E /* TakeSurvey */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -105,6 +107,26 @@
 				55CBC1802130F9F4007BA829 /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		00712E0E23AE2C5300C1656E /* LandingPage */ = {
+			isa = PBXGroup;
+			children = (
+				55CBC1762130F9F2007BA829 /* SurveyLandingPageVC.swift */,
+				55CBC1862130FA2A007BA829 /* SurveyLandingPageVC.xib */,
+				007519FD23ACDBB4001BE856 /* SurveyPageVC.swift */,
+				007519FE23ACDBB4001BE856 /* SurveyPageVC.xib */,
+			);
+			path = LandingPage;
+			sourceTree = "<group>";
+		};
+		00712E0F23AE2C6700C1656E /* TakeSurvey */ = {
+			isa = PBXGroup;
+			children = (
+				006BAE6B23AE2E1A00E192FB /* TakeSurveyVC.swift */,
+				006BAE6C23AE2E1A00E192FB /* TakeSurveyVC.xib */,
+			);
+			path = TakeSurvey;
 			sourceTree = "<group>";
 		};
 		00C5E8A323ADE04600191369 /* CustomViews */ = {
@@ -137,10 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				55CBC1742130F9F2007BA829 /* AppDelegate.swift */,
+				002E33C223AB692700A45FC3 /* ViewControllers */,
+				002E33BF23AB68EE00A45FC3 /* Models */,
 				002E33C123AB691C00A45FC3 /* Helpers */,
 				002E33C023AB690B00A45FC3 /* Service */,
-				002E33BF23AB68EE00A45FC3 /* Models */,
-				002E33C223AB692700A45FC3 /* ViewControllers */,
 				002E33C323AB693D00A45FC3 /* Support */,
 			);
 			path = SurveyExample;
@@ -226,6 +248,7 @@
 			files = (
 				55CBC17F2130F9F4007BA829 /* LaunchScreen.storyboard in Resources */,
 				00751A0023ACDBB4001BE856 /* SurveyPageVC.xib in Resources */,
+				006BAE6E23AE2E1A00E192FB /* TakeSurveyVC.xib in Resources */,
 				55CBC1872130FA2A007BA829 /* SurveyLandingPageVC.xib in Resources */,
 				55CBC17C2130F9F4007BA829 /* Assets.xcassets in Resources */,
 			);
@@ -280,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006BAE6D23AE2E1A00E192FB /* TakeSurveyVC.swift in Sources */,
 				00F510E323ABB07300389BD8 /* Constants.swift in Sources */,
 				55CBC1772130F9F2007BA829 /* SurveyLandingPageVC.swift in Sources */,
 				00F510E123ABAEB600389BD8 /* AuthManager.swift in Sources */,
