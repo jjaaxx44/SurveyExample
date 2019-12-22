@@ -12,17 +12,24 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var viewController:ViewController?
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    var viewController: SurveyLandingPageVC?
+    var rootNavigationController: UINavigationController?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = UIColor.black
+        window?.backgroundColor = UIColor.white
 
-        viewController = ViewController(nibName: "ViewController", bundle: nil)
+        viewController = SurveyLandingPageVC(nibName: "SurveyLandingPageVC", bundle: nil)
         
-        window?.rootViewController = viewController
+        guard let viewController = viewController else {
+            return false
+        }
+        rootNavigationController = UINavigationController(rootViewController: viewController)
+        setupNavigationAppereance()
+        
+        window?.rootViewController = rootNavigationController
         
         window?.makeKeyAndVisible()
 
@@ -50,7 +57,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    private func setupNavigationAppereance(){
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: AppColors.navBarTitleColor]
+            navBarAppearance.backgroundColor = AppColors.navBarColor
+            UINavigationBar.appearance(whenContainedInInstancesOf: [UINavigationController.self]).standardAppearance = navBarAppearance
+            UINavigationBar.appearance().tintColor = .white
+        }else {
+            UINavigationBar.appearance().barTintColor = AppColors.navBarColor
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:AppColors.navBarTitleColor]
+            UINavigationBar.appearance().tintColor = .white
+            UINavigationBar.appearance().isTranslucent = false
+        }
+    }
 }
 

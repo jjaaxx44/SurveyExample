@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SurveyPageVC" customModule="SurveyExample" customModuleProvider="target">
+            <connections>
+                <outlet property="discriptionLabel" destination="hMh-UA-X3r" id="1hk-z8-lHv"/>
+                <outlet property="surveyImageView" destination="abF-KO-Sv3" id="lpR-6W-gKZ"/>
+                <outlet property="takeTheSurveyButton" destination="GGg-N5-qNa" id="UMP-zo-P4c"/>
+                <outlet property="titleLabel" destination="HKC-zb-3Z2" id="H71-db-jaK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="abF-KO-Sv3">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-N5-qNa">
+                    <rect key="frame" x="103.66666666666669" y="762" width="207" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="XaQ-0x-Bpy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="Take the survey">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="takeSurveyButtonClicked:" destination="-1" eventType="touchUpInside" id="sEj-Og-s7s"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKC-zb-3Z2">
+                    <rect key="frame" x="10" y="148" width="394" height="0.0"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMh-UA-X3r">
+                    <rect key="frame" x="10" y="158" width="394" height="0.0"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="abF-KO-Sv3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4oF-DW-w2N"/>
+                <constraint firstItem="HKC-zb-3Z2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="5m1-pI-F1Q"/>
+                <constraint firstItem="abF-KO-Sv3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8LM-cC-4xg"/>
+                <constraint firstItem="hMh-UA-X3r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="E9W-lx-uoi"/>
+                <constraint firstAttribute="bottom" secondItem="abF-KO-Sv3" secondAttribute="bottom" id="Hs5-Qm-1T4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GGg-N5-qNa" secondAttribute="bottom" constant="50" id="HxF-Ye-RLZ"/>
+                <constraint firstItem="HKC-zb-3Z2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="OJD-5c-RGR"/>
+                <constraint firstItem="GGg-N5-qNa" firstAttribute="width" secondItem="abF-KO-Sv3" secondAttribute="width" multiplier="0.5" id="WBe-kb-2kv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HKC-zb-3Z2" secondAttribute="trailing" constant="10" id="fSX-P9-lTS"/>
+                <constraint firstAttribute="trailing" secondItem="abF-KO-Sv3" secondAttribute="trailing" id="jjJ-2g-t0O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hMh-UA-X3r" secondAttribute="trailing" constant="10" id="jp6-H0-zWv"/>
+                <constraint firstItem="GGg-N5-qNa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rdv-4H-dQY"/>
+                <constraint firstItem="hMh-UA-X3r" firstAttribute="top" secondItem="HKC-zb-3Z2" secondAttribute="bottom" constant="10" id="zb0-vY-Cus"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="89"/>
+        </view>
+    </objects>
+</document>
