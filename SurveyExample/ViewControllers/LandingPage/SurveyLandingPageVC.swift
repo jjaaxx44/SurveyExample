@@ -14,10 +14,10 @@ class SurveyLandingPageVC: UIViewController {
     private var pageController: UIPageViewController?
     @IBOutlet weak var pageControl: NMPageControl!
     
-    private var surveyViewItems: [UIViewController] = []
-    private var currentSurveyPage = 1
-    private var surveryCount = 5
-    private var surveyModels = [Survey]()
+    var surveyViewItems: [UIViewController] = []
+    var currentSurveyPage = 1
+    var surveryCount = 5
+    var surveyModels = [Survey]()
     
     private var leftButton: UIBarButtonItem!
     private var reloadButton: UIBarButtonItem!
@@ -89,7 +89,7 @@ class SurveyLandingPageVC: UIViewController {
         }
     }
     
-    private func processApiSuccess(surveys: [Survey], forPage: Int){
+    func processApiSuccess(surveys: [Survey], forPage: Int){
         if surveys.count == 0 {
             self.view.makeToast("No more surveys!!")
             return
@@ -115,24 +115,24 @@ class SurveyLandingPageVC: UIViewController {
 
 // MARK: - Actions
 extension SurveyLandingPageVC{
-    @objc private func menuButtonClicked(){
+    @objc func menuButtonClicked(){
         surveryCount += 5
         (surveryCount > 20) ? (surveryCount = 5) : ()
         self.view.hideAllToasts(includeActivity: false, clearQueue: false)
         self.view.makeToast("Survey count per page: \(surveryCount)", position: .center)
     }
     
-    @objc private func reloadButtonClicked(){
+    @objc func reloadButtonClicked(){
         currentSurveyPage = 1
         self.surveyModels.removeAll()
         getSurveys(forPage: currentSurveyPage)
     }
     
-    @objc private func rightButtonClicked(_ sender: UIButton){
+    @objc func rightButtonClicked(_ sender: UIButton){
         getSurveys(forPage: currentSurveyPage + 1)
     }
     
-    @objc private func leftButtonClicked(_ sender: UIButton){
+    @objc func leftButtonClicked(_ sender: UIButton){
         getSurveys(forPage: currentSurveyPage - 1)
     }
 }

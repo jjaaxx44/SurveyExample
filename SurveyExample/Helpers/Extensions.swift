@@ -8,6 +8,17 @@
 
 import UIKit
 
+extension Data {
+    func processData<T: Decodable>(classType: T.Type) -> Any? {
+//        guard let data = data,
+            let surveyAraay = try? JSONDecoder().decode(classType, from: self)
+//            else {
+//                return nil
+//        }
+        return surveyAraay
+    }
+}
+
 extension UIView {
     func addBorder(borderWidth: CGFloat, cornerRadius: CGFloat, borderColor: UIColor){
         self.layer.borderColor = borderColor.cgColor

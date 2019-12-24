@@ -28,12 +28,11 @@ class APIManager {
                     switch response.result {
                     case .success(_):
                         do {
-                            guard let data = response.data,
-                                let serveyAraay = try? JSONDecoder().decode([Survey].self, from: data) else {
-                                    complition(.failure(.apiFailed))
-                                    return
+                            guard let surveyArray = response.data?.processData(classType: [Survey].self) as? [Survey] else {
+                                complition(.failure(.apiFailed))
+                                return
                             }
-                            complition(.success(serveyAraay))
+                            complition(.success(surveyArray))
                         }
                     case .failure(let error):
                         if let errorString = error.errorDescription, errorString.contains("cancelled") {
