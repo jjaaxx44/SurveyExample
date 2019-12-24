@@ -12,7 +12,7 @@ import XCTest
 class SurveyExampleTests: XCTestCase {
         
     var surveyPageVC: SurveyPageVC!
-    var takeSurveyVC: TakeSurveyVC!
+    var landingVC: SurveyLandingPageVC!
 
     static let idString = "test id"
     static let titleString = "test title"
@@ -24,10 +24,13 @@ class SurveyExampleTests: XCTestCase {
         self.surveyPageVC = SurveyPageVC(survey: testSurvey)
         self.surveyPageVC.loadView()
         self.surveyPageVC.viewDidLoad()
+        
+        self.landingVC = SurveyLandingPageVC()
+        self.landingVC.currentSurveyPage = 1
+        self.landingVC.surveryCount = 1
+        self.landingVC.loadView()
+        self.landingVC.viewDidLoad()
 
-        self.takeSurveyVC = TakeSurveyVC(survey: testSurvey)
-        self.takeSurveyVC.loadView()
-        self.takeSurveyVC.viewDidLoad()
     }
 
     override func setUp() {
@@ -38,9 +41,21 @@ class SurveyExampleTests: XCTestCase {
 
     override func tearDown() {
         surveyPageVC = nil
-        takeSurveyVC = nil
         super.tearDown()
     }
+    
+    func testLandingPage() {
+        landingVC.processApiSuccess(surveys: [testSurvey, testSurvey], forPage: 1)
+        XCTAssertTrue(landingVC.surveyModels.count == 2)
+        XCTAssertTrue(landingVC.pageControl.numberOfPages == 2)
+        XCTAssertTrue(landingVC.surveyModels.count == 2)
+        XCTAssertTrue(landingVC.surveyViewItems.first is SurveyPageVC)
+        
+        landingVC.surveryCount = 5
+        landingVC.menuButtonClicked()
+        XCTAssertTrue(landingVC.surveryCount == 10)
+    }
+
 
     func testSurveyPageVC() {
         XCTAssertNotNil(self.surveyPageVC, "surveyPageVC is nil")
@@ -52,12 +67,40 @@ class SurveyExampleTests: XCTestCase {
         XCTAssertTrue(self.surveyPageVC.discriptionLabel.text == SurveyExampleTests.descriptionString)
         XCTAssertTrue(self.surveyPageVC.titleLabel.text == SurveyExampleTests.titleString)
     }
-
+    
     func testTakeSurveyVC() {
+        
+        let viewController = self.surveyPageVC
+        let navigationController = MockNavController(rootViewController: viewController!)
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
+        
+        viewController?.takeTheSurveyButton.sendActions(for: .touchUpInside)
+        
+        XCTAssertTrue(navigationController.pushedViewController is TakeSurveyVC)
+
+        guard let takeSurveyVC = navigationController.pushedViewController as? TakeSurveyVC else{
+            XCTFail()
+            return
+        }
+        
+        takeSurveyVC.loadView()
+        takeSurveyVC.viewDidLoad()
+        
         let labelString = "id: \(SurveyExampleTests.idString)\n\(SurveyExampleTests.titleString)"
 
-        XCTAssertNotNil(self.takeSurveyVC, "takeSurveyVC is nil")
+        XCTAssertNotNil(takeSurveyVC, "takeSurveyVC is nil")
 
-        XCTAssertTrue(self.takeSurveyVC.takeSurveyDummyLlabel.text == labelString)
+        XCTAssertTrue(takeSurveyVC.takeSurveyDummyLlabel.text == labelString)
     }
 }
+
+class MockNavController: UINavigationController {
+    
+    var pushedViewController: UIViewController?
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        pushedViewController = viewController
+        super.pushViewController(viewController, animated: true)
+    }
+}
+

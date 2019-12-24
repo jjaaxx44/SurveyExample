@@ -45,8 +45,7 @@ class AuthManager {
                 switch response.result {
                 case .success(let value):
                     do {
-                        guard let data = response.data,
-                            let authObject = try? JSONDecoder().decode(AuthModel.self, from: data),
+                        guard let authObject = response.data?.processData(classType: AuthModel.self) as? AuthModel,
                             let accessToken = authObject.access_token else {
                                 if let json = value as? [String: Any], let errorString = json["error"] as? String {
                                     if errorString == AuthError.invalidGrant{
