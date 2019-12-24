@@ -101,7 +101,14 @@ class SurveyLandingPageVC: UIViewController {
         populateItems()
         self.view.makeToast("Surveys \(((forPage-1)*surveryCount)+1) to \(forPage*surveryCount)", position: .center)
         if let firstViewController = surveyViewItems.first {
-            self.pageController!.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+            
+            self.pageController?.setViewControllers([firstViewController], direction: .forward, animated: true) { done in
+                if done {
+                    DispatchQueue.main.async() {
+                        self.pageController?.setViewControllers([firstViewController], direction: .forward, animated: false, completion: {done in })
+                    }
+                }
+            }
         }
     }
 }
